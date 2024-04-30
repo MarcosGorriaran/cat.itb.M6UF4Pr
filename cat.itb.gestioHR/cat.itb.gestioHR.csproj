@@ -181,6 +181,7 @@
     <Compile Include="connections\MongoConnection.cs" />
     <Compile Include="depDAO\Department.cs" />
     <Compile Include="depDAO\DepartmentDAO.cs" />
+    <Compile Include="depDAO\FileDepartmentImpl.cs" />
     <Compile Include="depDAO\MongoDepartmentImpl.cs" />
     <Compile Include="depDAO\SQLDepartmentImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
