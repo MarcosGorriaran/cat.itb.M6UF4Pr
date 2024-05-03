@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using cat.itb.gestioHR.DTO;
 
-namespace cat.itb.gestioHR.depDAO
+namespace cat.itb.gestioHR.Persistance.DAO
 {
     public interface DepartmentDAO
     {
@@ -10,11 +9,11 @@ namespace cat.itb.gestioHR.depDAO
         void InsertAll(List<Department> deps);
         List<Department> SelectAll();
         Department Select(int depId);
-        Boolean Insert(Department dep);
+        bool Insert(Department dep);
 
-        Boolean Delete(int depId);
+        bool Delete(int depId);
 
-        Boolean Update(Department dep);
+        bool Update(Department dep);
 
     }
 }

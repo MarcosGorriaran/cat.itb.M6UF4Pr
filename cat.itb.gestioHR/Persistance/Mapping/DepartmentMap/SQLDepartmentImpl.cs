@@ -1,46 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using cat.itb.gestioHR.connections;
+using cat.itb.gestioHR.DTO;
+using cat.itb.gestioHR.Persistance.DAO;
 using Npgsql;
 
-namespace cat.itb.gestioHR.depDAO
+namespace cat.itb.gestioHR.Persistance.Mapping.DepartmentMap
 {
     public class SQLDepartmentImpl : DepartmentDAO
     {
-        
+
         private NpgsqlConnection conn;
 
         public void DeleteAll()
         {
             SQLConnection db = new SQLConnection();
             conn = db.GetConnection();
-            
+
             NpgsqlCommand cmd = new NpgsqlCommand("DELETE FROM department", conn);
 
             try
             {
                 cmd.ExecuteNonQuery();
-              
+
                 Console.WriteLine("Departments deleted");
             }
             catch
             {
                 Console.WriteLine("Couldn't delete Departments");
-                
+
             }
 
             conn.Close();
-         
+
         }
-        
+
         public void InsertAll(List<Department> deps)
         {
             DeleteAll();
             SQLConnection db = new SQLConnection();
             conn = db.GetConnection();
-            
+
             NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO department VALUES (@prodNum, @descripcio)", conn);
-            
+
             foreach (var dep in deps)
             {
                 cmd.Parameters.AddWithValue("depno", dep._id);
@@ -58,13 +60,13 @@ namespace cat.itb.gestioHR.depDAO
                 {
                     Console.WriteLine("Couldn't add Department with Id {0}", dep._id);
                 }
-                
+
                 cmd.Parameters.Clear();
             }
-            
+
             conn.Close();
         }
-        
+
         public List<Department> SelectAll()
         {
             SQLConnection db = new SQLConnection();
@@ -73,8 +75,8 @@ namespace cat.itb.gestioHR.depDAO
             var cmd = new NpgsqlCommand("SELECT * FROM department", conn);
             NpgsqlDataReader dr = cmd.ExecuteReader();
 
-            List<Department> deps = new List<Department>(); 
-            
+            List<Department> deps = new List<Department>();
+
             while (dr.Read())
             {
                 Department dep = new Department();
@@ -87,17 +89,17 @@ namespace cat.itb.gestioHR.depDAO
             conn.Close();
             return deps;
         }
-        
+
         public Department Select(int depId)
         {
-       
-           SQLConnection db = new SQLConnection();
-           conn = db.GetConnection();
-           
+
+            SQLConnection db = new SQLConnection();
+            conn = db.GetConnection();
+
             NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM department WHERE _id =" + depId, conn);
             NpgsqlDataReader dr = cmd.ExecuteReader();
             Department dep = new Department();
-            
+
             if (dr.Read())
             {
                 dep._id = dr.GetInt32(0);
@@ -107,22 +109,22 @@ namespace cat.itb.gestioHR.depDAO
             else
             {
                 dep = null;
-               
+
             }
             conn.Close();
             return dep;
-            
+
         }
 
-        public Boolean Insert(Department dep)
+        public bool Insert(Department dep)
         {
-   
-           SQLConnection db = new SQLConnection();
-           conn = db.GetConnection();
-           
+
+            SQLConnection db = new SQLConnection();
+            conn = db.GetConnection();
+
             NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO department VALUES (@depno, @nom, @loc)", conn);
 
-            Boolean bol; 
+            bool bol;
             cmd.Parameters.AddWithValue("depno", dep._id);
             cmd.Parameters.AddWithValue("nom", dep.Name);
             cmd.Parameters.AddWithValue("loc", dep.Loc);
@@ -139,31 +141,31 @@ namespace cat.itb.gestioHR.depDAO
                 bol = false;
                 Console.WriteLine("Couldn't add Department with Id {0}", dep._id);
             }
-           
+
             conn.Close();
             return bol;
 
         }
 
-        public Boolean Delete(int depId)
+        public bool Delete(int depId)
         {
-          
-           SQLConnection db = new SQLConnection();
-           conn = db.GetConnection();
-            Boolean bol; 
-            
-            NpgsqlCommand cmd = new NpgsqlCommand("DELETE FROM department WHERE _id =" +depId, conn);
+
+            SQLConnection db = new SQLConnection();
+            conn = db.GetConnection();
+            bool bol;
+
+            NpgsqlCommand cmd = new NpgsqlCommand("DELETE FROM department WHERE _id =" + depId, conn);
 
             try
             {
-                 cmd.ExecuteNonQuery();
-                 bol = true;
-                 Console.WriteLine("Department with Id {0} deleted",
-                    depId);
+                cmd.ExecuteNonQuery();
+                bol = true;
+                Console.WriteLine("Department with Id {0} deleted",
+                   depId);
             }
             catch
             {
-                Console.WriteLine("Couldn't delete Department with Id {0}",depId);
+                Console.WriteLine("Couldn't delete Department with Id {0}", depId);
                 bol = false;
             }
 
@@ -171,13 +173,13 @@ namespace cat.itb.gestioHR.depDAO
             return bol;
         }
 
-        public Boolean Update(Department dep)
+        public bool Update(Department dep)
         {
             SQLConnection db = new SQLConnection();
-           conn = db.GetConnection();
+            conn = db.GetConnection();
             NpgsqlCommand cmd = new NpgsqlCommand("UPDATE department SET name = @nom, loc = @loc  WHERE _id = @depId", conn);
-            Boolean bol; 
-          
+            bool bol;
+
             cmd.Parameters.AddWithValue("nom", dep.Name);
             cmd.Parameters.AddWithValue("loc", dep.Loc);
             cmd.Parameters.AddWithValue("depId", dep._id);
@@ -193,11 +195,11 @@ namespace cat.itb.gestioHR.depDAO
                 bol = false;
                 Console.WriteLine("Couldn't update Department {0}", dep.Name);
             }
-            
-            
+
+
             conn.Close();
             return bol;
         }
-        
+
     }
 }

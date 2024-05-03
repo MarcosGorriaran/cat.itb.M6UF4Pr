@@ -1,4 +1,4 @@
-﻿namespace cat.itb.gestioHR.depDAO
+﻿namespace cat.itb.gestioHR.DTO
 {
     public class Department
     {
