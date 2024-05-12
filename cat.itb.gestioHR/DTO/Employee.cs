@@ -14,13 +14,12 @@ namespace cat.itb.gestioHR.DTO
         public string Job { get; set; }
         [BsonIgnoreIfNull]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public Employee Manager { get; set; }
+        public int? Manager { get; set; }
         public DateOnly StartDate { get; set; }
         public float Salary { get; set; }
         [BsonIgnoreIfNull]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public float? Comision { get; set; }
         public Department Department {  get; set; }
-        public List<Employee> Lackeys { get; set; }
     }
 }

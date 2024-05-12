@@ -1,7 +1,7 @@
 ﻿using cat.itb.gestioHR.connections;
 using cat.itb.gestioHR.DTO;
 using cat.itb.gestioHR.Persistance.Mapping.DepartmentMap;
-using cat.itb.gestioHR.Persistance.Utils;
+using cat.itb.gestioHR.Persistance.Mapping.EmployeeMap;
 using cat.itb.M6UF3EA2.helpers;
 using System.Reflection;
 
@@ -15,12 +15,15 @@ public class Driver
         FileDepartmentImpl crudDepFile = new FileDepartmentImpl("../../../departments.json");
         SQLDepartmentImpl crudDeptSQL = new SQLDepartmentImpl();
         MongoDepartmentImpl crudDeptMongo = new MongoDepartmentImpl();
-        Console.WriteLine(((ColumnName)typeof(Employee).GetProperty("Id").GetCustomAttribute(typeof(ColumnName))).Name);
+        FileEmployeeImpl crudEmpFile = new FileEmployeeImpl("../../../employee.json");
+        using SQLEmployeeImpl crudEmpSQL = new SQLEmployeeImpl();
+        MongoEmployeeImpl crudEmpMongo = new MongoEmployeeImpl();
         Menu menu = new Menu(new Dictionary<string, string>()
         {
             {ExitOption, ExitName },
             {"2","Check Insert all"},
-            {"3", "Check Select all"}
+            {"3", "Check Select all"},
+            {"5", "SQL to File"}
         },"Pick an option: ");
         string option;
         do
@@ -43,6 +46,11 @@ public class Driver
                     List<Department> depFileData = crudDepFile.SelectAll();
                     crudDeptMongo.InsertAll(depFileData);
                     break;
+                case "5":
+                    List<Employee> empDBData = crudEmpSQL.GetAll().ToList();
+                    crudEmpFile.Add(empDBData);
+                    break;
+
             }
         } while (option!=ExitOption);
         

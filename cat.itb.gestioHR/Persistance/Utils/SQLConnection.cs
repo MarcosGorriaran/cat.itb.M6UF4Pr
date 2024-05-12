@@ -5,10 +5,10 @@ namespace cat.itb.gestioHR.connections
 {
     public class SQLConnection
     {
-        private String HOST = "balarama.db.elephantsql.com:5432"; // Ubicació de la BD.
-        private String DB = "qylrvsaa"; // Nom de la BD.
-        private String USER = "qylrvsaa";
-        private String PASSWORD = "WApqM0DJGoMManfagt-fBh-8r8wrRUyI";
+        private String HOST = "surus.db.elephantsql.com:5432"; // Ubicació de la BD.
+        private String DB = "smxmqzjw"; // Nom de la BD.
+        private String USER = "smxmqzjw";
+        private String PASSWORD = "O7F6jL3dN89QfFkleiTWKjbAtlGc2gfw";
 
         public NpgsqlConnection GetConnection()
         {

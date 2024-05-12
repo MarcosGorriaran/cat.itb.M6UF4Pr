@@ -1,0 +1,187 @@
+[
+  {
+    "_id": 7369,
+    "Surname": "S\u00C1NCHEZ",
+    "Job": "EMPLEADO",
+    "Manager": 7902,
+    "StartDate": "1990-12-17",
+    "Salary": 1040,
+    "Department": {
+      "_id": 20,
+      "Name": "INVESTIGACI\u00D3N",
+      "Loc": "MADRID"
+    }
+  },
+  {
+    "_id": 7499,
+    "Surname": "ARROYO",
+    "Job": "VENDEDOR",
+    "Manager": 7698,
+    "StartDate": "1990-02-20",
+    "Salary": 1500,
+    "Comision": 390,
+    "Department": {
+      "_id": 30,
+      "Name": "VENTAS",
+      "Loc": "BARCELONA"
+    }
+  },
+  {
+    "_id": 7521,
+    "Surname": "SALA",
+    "Job": "VENDEDOR",
+    "Manager": 7698,
+    "StartDate": "1991-02-22",
+    "Salary": 1625,
+    "Comision": 650,
+    "Department": {
+      "_id": 30,
+      "Name": "VENTAS",
+      "Loc": "BARCELONA"
+    }
+  },
+  {
+    "_id": 7566,
+    "Surname": "JIM\u00C9NEZ",
+    "Job": "DIRECTOR",
+    "Manager": 7839,
+    "StartDate": "1991-04-02",
+    "Salary": 2900,
+    "Department": {
+      "_id": 20,
+      "Name": "INVESTIGACI\u00D3N",
+      "Loc": "MADRID"
+    }
+  },
+  {
+    "_id": 7654,
+    "Surname": "MART\u00CDN",
+    "Job": "VENDEDOR",
+    "Manager": 7698,
+    "StartDate": "1991-09-29",
+    "Salary": 1600,
+    "Comision": 1020,
+    "Department": {
+      "_id": 30,
+      "Name": "VENTAS",
+      "Loc": "BARCELONA"
+    }
+  },
+  {
+    "_id": 7698,
+    "Surname": "NEGRO",
+    "Job": "DIRECTOR",
+    "Manager": 7839,
+    "StartDate": "1991-05-01",
+    "Salary": 3005,
+    "Department": {
+      "_id": 30,
+      "Name": "VENTAS",
+      "Loc": "BARCELONA"
+    }
+  },
+  {
+    "_id": 7782,
+    "Surname": "CEREZO",
+    "Job": "DIRECTOR",
+    "Manager": 7839,
+    "StartDate": "1991-06-09",
+    "Salary": 2885,
+    "Department": {
+      "_id": 10,
+      "Name": "CONTABILIDAD",
+      "Loc": "SEVILLA"
+    }
+  },
+  {
+    "_id": 7788,
+    "Surname": "GIL",
+    "Job": "ANALISTA",
+    "Manager": 7566,
+    "StartDate": "1991-11-09",
+    "Salary": 3000,
+    "Department": {
+      "_id": 20,
+      "Name": "INVESTIGACI\u00D3N",
+      "Loc": "MADRID"
+    }
+  },
+  {
+    "_id": 7839,
+    "Surname": "REY",
+    "Job": "PRESIDENTE",
+    "StartDate": "1991-11-17",
+    "Salary": 4100,
+    "Department": {
+      "_id": 10,
+      "Name": "CONTABILIDAD",
+      "Loc": "SEVILLA"
+    }
+  },
+  {
+    "_id": 7844,
+    "Surname": "TOVAR",
+    "Job": "VENDEDOR",
+    "Manager": 7698,
+    "StartDate": "1991-09-08",
+    "Salary": 1350,
+    "Comision": 0,
+    "Department": {
+      "_id": 30,
+      "Name": "VENTAS",
+      "Loc": "BARCELONA"
+    }
+  },
+  {
+    "_id": 7876,
+    "Surname": "ALONSO",
+    "Job": "EMPLEADO",
+    "Manager": 7788,
+    "StartDate": "1991-09-23",
+    "Salary": 1430,
+    "Department": {
+      "_id": 20,
+      "Name": "INVESTIGACI\u00D3N",
+      "Loc": "MADRID"
+    }
+  },
+  {
+    "_id": 7900,
+    "Surname": "JIMENO",
+    "Job": "EMPLEADO",
+    "Manager": 7698,
+    "StartDate": "1991-12-03",
+    "Salary": 1335,
+    "Department": {
+      "_id": 30,
+      "Name": "VENTAS",
+      "Loc": "BARCELONA"
+    }
+  },
+  {
+    "_id": 7902,
+    "Surname": "FERN\u00C1NDEZ",
+    "Job": "ANALISTA",
+    "Manager": 7566,
+    "StartDate": "1991-12-03",
+    "Salary": 3000,
+    "Department": {
+      "_id": 20,
+      "Name": "INVESTIGACI\u00D3N",
+      "Loc": "MADRID"
+    }
+  },
+  {
+    "_id": 7934,
+    "Surname": "MU\u00D1OZ",
+    "Job": "EMPLEADO",
+    "Manager": 7782,
+    "StartDate": "1992-01-23",
+    "Salary": 1690,
+    "Department": {
+      "_id": 10,
+      "Name": "CONTABILIDAD",
+      "Loc": "SEVILLA"
+    }
+  }
+]
