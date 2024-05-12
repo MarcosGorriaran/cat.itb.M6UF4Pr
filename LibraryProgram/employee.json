@@ -54,20 +54,6 @@
     }
   },
   {
-    "_id": 7654,
-    "Surname": "MART\u00CDN",
-    "Job": "VENDEDOR",
-    "Manager": 7698,
-    "StartDate": "1991-09-29",
-    "Salary": 1600,
-    "Comision": 1020,
-    "Department": {
-      "_id": 30,
-      "Name": "VENTAS",
-      "Loc": "BARCELONA"
-    }
-  },
-  {
     "_id": 7698,
     "Surname": "NEGRO",
     "Job": "DIRECTOR",
@@ -182,6 +168,20 @@
       "_id": 10,
       "Name": "CONTABILIDAD",
       "Loc": "SEVILLA"
+    }
+  },
+  {
+    "_id": 7654,
+    "Surname": "MART\u00CDN",
+    "Job": "VENDEDOR",
+    "Manager": 7698,
+    "StartDate": "1991-09-29",
+    "Salary": 2000,
+    "Comision": 1020,
+    "Department": {
+      "_id": 30,
+      "Name": "VENTAS",
+      "Loc": "BARCELONA"
     }
   }
 ]

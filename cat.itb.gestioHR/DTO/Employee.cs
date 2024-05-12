@@ -21,5 +21,10 @@ namespace cat.itb.gestioHR.DTO
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public float? Comision { get; set; }
         public Department Department {  get; set; }
+
+        public override string ToString()
+        {
+            return $"{{{nameof(Id)}={Id.ToString()}, {nameof(Surname)}={Surname}, {nameof(Job)}={Job}, {nameof(Manager)}={Manager.ToString()}, {nameof(StartDate)}={StartDate.ToString()}, {nameof(Salary)}={Salary.ToString()}, {nameof(Comision)}={Comision.ToString()}, {nameof(Department)}={Department}}}";
+        }
     }
 }

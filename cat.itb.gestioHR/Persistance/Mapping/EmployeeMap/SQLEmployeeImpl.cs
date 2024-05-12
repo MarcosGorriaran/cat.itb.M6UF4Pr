@@ -121,6 +121,7 @@ namespace cat.itb.gestioHR.Persistance.Mapping.EmployeeMap
             NpgsqlCommand cmd = new NpgsqlCommand(sql, Conn);
             cmd.Parameters.AddWithValue(IdName, entity.Id);
             cmd.Parameters.AddWithValue(SurnameName, entity.Surname);
+            cmd.Parameters.AddWithValue(JobName, entity.Job);
             cmd.Parameters.AddWithValue(ManagerName, entity.Manager);
             cmd.Parameters.AddWithValue(StartDateName, entity.StartDate);
             cmd.Parameters.AddWithValue(SalaryName, entity.Salary);
