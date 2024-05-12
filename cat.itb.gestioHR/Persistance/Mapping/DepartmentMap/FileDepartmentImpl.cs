@@ -37,7 +37,6 @@ namespace cat.itb.gestioHR.Persistance.Mapping.DepartmentMap
             try
             {
                 fileWriter.WriteLine(JsonSerializer.Serialize(concatDepartments, new JsonSerializerOptions { WriteIndented = true }));
-                fileWriter.Close();
             }
             finally
             {

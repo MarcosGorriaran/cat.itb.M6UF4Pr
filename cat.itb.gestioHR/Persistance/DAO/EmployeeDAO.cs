@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using cat.itb.gestioHR.DTO;
 
 namespace cat.itb.gestioHR.Persistance.DAO
 {
-    public interface EmployeeDAO
+    public interface EmployeeDAO : IDAO<Employee>
     {
     }
 }

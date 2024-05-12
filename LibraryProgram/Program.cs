@@ -1,7 +1,9 @@
 ﻿using cat.itb.gestioHR.connections;
 using cat.itb.gestioHR.DTO;
 using cat.itb.gestioHR.Persistance.Mapping.DepartmentMap;
+using cat.itb.gestioHR.Persistance.Utils;
 using cat.itb.M6UF3EA2.helpers;
+using System.Reflection;
 
 namespace LibraryProgram;
 
@@ -13,6 +15,7 @@ public class Driver
         FileDepartmentImpl crudDepFile = new FileDepartmentImpl("../../../departments.json");
         SQLDepartmentImpl crudDeptSQL = new SQLDepartmentImpl();
         MongoDepartmentImpl crudDeptMongo = new MongoDepartmentImpl();
+        Console.WriteLine(((ColumnName)typeof(Employee).GetProperty("Id").GetCustomAttribute(typeof(ColumnName))).Name);
         Menu menu = new Menu(new Dictionary<string, string>()
         {
             {ExitOption, ExitName },
